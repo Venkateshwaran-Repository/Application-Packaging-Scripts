@@ -1,0 +1,11 @@
+set fso =createobject("scripting.filesystemobject")
+ set wshshell = createobject("wscript.shell")
+ Desktop = wshshell.expandenvironmentstrings("%PUBLIC%")
+ StartMenu = wshshell.expandenvironmentstrings("%ProgramData%")
+
+ 
+
+If fso.FolderExists(StartMenu   & "\Microsoft\Windows\Start Menu\Programs\Nortel VPN Client") Then
+    fso.DeleteFile(StartMenu & "\Microsoft\Windows\Start Menu\Programs\Nortel VPN Client\Uninstall Nortel VPN Client.lnk")
+ fso.DeleteFile(Desktop  & "\Desktop\Nortel VPN Client.lnk")
+ End If
